@@ -22,7 +22,13 @@ module CapybaraInlineScreenshot
   end
 
   def self.artifact_escape_code_for_image(path)
+    warn "Image path: #{path}"
+    warn "exists?: #{File.exist?(path)}"
     relative_path = path.sub(/\A#{base_artifact_dir}\/?/, '')
+    warn "Relative path: #{relative_path}"
+    warn "exists?: #{File.exist?(relative_path)}"
+    warn "base_artifact_dir: #{base_artifact_dir}"
+
     "\e]1338;url=artifact://#{relative_path}\a"
   end
 
