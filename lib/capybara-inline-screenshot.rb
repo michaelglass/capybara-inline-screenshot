@@ -29,7 +29,7 @@ module CapybaraInlineScreenshot
     warn "exists?: #{File.exist?(relative_path)}"
     warn "base_artifact_dir: #{base_artifact_dir}"
 
-    "\e]1338;url=artifact://#{relative_path}\a"
+    "\e]1338;url=artifact://#{path}\a"
   end
 
   def self.base64_escape_code_for_image(path)
